@@ -1,0 +1,40 @@
+.cyberIntro {
+  padding: 3rem;
+  border-radius: 20px;
+
+  background: radial-gradient(circle at top, #0f2027, #000000);
+  color: #e6f1ff;
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.3),
+    0 0 40px rgba(255,0,255,0.3);
+
+  border: 1px solid rgba(255, 0, 255, 0.4);
+}
+
+.cyberIntro h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(0,255,255,0.5),
+    0 0 20px rgba(255,0,255,0.5);
+}
+
+.cyberIntro ul li {
+  margin: 0.6rem 0;
+}
+/* Purple sci-fi background for main content */
+.main-wrapper {
+  background: linear-gradient(135deg, #3a0b5e, #12001f, #050008);
+}
+
+/* Also affect docs pages */
+.theme-doc-markdown {
+  background: transparent;
+}
