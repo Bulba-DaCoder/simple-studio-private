@@ -1,75 +1,113 @@
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background: radial-gradient(circle at top, #0f2027, #000000);
-  color: #e6f1ff;
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(circle at top, #1b2735, #090a0f);
+  color: white;
   text-align: center;
 }
 
-.title {
-  font-size: 4.5rem;
-  font-weight: 900;
-  letter-spacing: 2px;
+/* NEBULA BACKGROUND */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(199,125,255,0.25), transparent 40%),
+    radial-gradient(circle at 70% 40%, rgba(0,246,255,0.2), transparent 45%),
+    radial-gradient(circle at 40% 70%, rgba(255,215,0,0.15), transparent 40%);
+  background-size: 200% 200%;
+  animation: nebulaMove 30s ease-in-out infinite;
+  z-index: 0;
+}
 
-  background: linear-gradient(90deg, #00ffff, #ff00ff);
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes nebulaMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00f6ff, #8f00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 10px rgba(0,255,255,0.6),
-    0 0 20px rgba(255,0,255,0.6),
-    0 0 40px rgba(255,0,255,0.4);
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-top: 1rem;
-  max-width: 700px;
+  max-width: 600px;
   opacity: 0.85;
 }
 
 .buttons {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.cardButton {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .buttonPrimary {
-  padding: 14px 30px;
-  border-radius: 40px;
-  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  background: linear-gradient(90deg, #00f6ff, #8f00ff);
   color: black;
-  font-weight: bold;
-  text-decoration: none;
-
-  box-shadow:
-    0 0 15px rgba(0,255,255,0.6),
-    0 0 30px rgba(255,0,255,0.6);
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.buttonPrimary:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 25px rgba(0,255,255,0.9),
-    0 0 50px rgba(255,0,255,0.9);
+  box-shadow: 0 0 20px rgba(143, 0, 255, 0.6);
 }
 
 .buttonSecondary {
-  padding: 14px 30px;
-  border-radius: 40px;
-  border: 2px solid #ff00ff;
-  color: #ff00ff;
-  text-decoration: none;
-
-  box-shadow: 0 0 10px rgba(255,0,255,0.5);
+  border: 2px solid #8f00ff;
+  color: white;
 }
 
-.buttonSecondary:hover {
-  background: rgba(255,0,255,0.1);
+.buttonPrimary:hover,
+.buttonSecondary:hover,
+.cardButton:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 150, 255, 0.8);
+}
+
+/* INTRO CARD */
+.card {
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid #8f00ff;
+  border-radius: 20px;
+  padding: 22px;
+  max-width: 520px;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(143, 0, 255, 0.5);
+}
+
+.card h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffd700, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #ddd;
 }
