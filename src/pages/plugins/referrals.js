@@ -1,40 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import styles from './pluginPage.module.css';
+import SidebarMenu from '../../components/SidebarMenu';
 
 export default function AntiAfk() {
+  const [open, setOpen] = useState(false);
+
   return (
     <Layout title="AntiAFK">
-      <div className={styles.page}>
+      <SidebarMenu />
+
+      {/* TELEPORTER (RIGHT SIDE) */}
+      <div className={`${styles.teleporter} ${open ? styles.open : ''}`}>
+        <button
+          className={styles.toggle}
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
 
         <nav className={styles.index}>
-          <a href="#info">Information</a>
-          <a href="#commands">Commands</a>
-          <a href="#config">Config</a>
+          <a href="#introduction">Introduction</a>
+          <a href="#permissions">Permissions</a>
+          <a href="#config">Configuration Files</a>
+          <a href="#placeholders">Placeholders</a>
         </nav>
+      </div>
 
-        <section id="info">
+      <main className={styles.page}>
+        {/* INTRO */}
+        <section id="introduction">
           <h1>AntiAFK</h1>
-          <p>Detects auto clickers, afk pools and tons more.</p>
+          <p>Detects auto clickers, AFK pools and tons more.</p>
         </section>
 
-        <section id="commands">
-          <h2>Commands</h2>
+        {/* PERMISSIONS */}
+        <section id="permissions">
+          <h2>Permissions</h2>
           <ul>
-            <li>/antiafk reload</li>
-            <li>/antiafk status</li>
+            <li>antiafk.bypass</li>
+            <li>antiafk.reload</li>
           </ul>
         </section>
 
+        {/* CONFIG */}
         <section id="config">
-          <h2>Config</h2>
+          <h2>Configuration Files</h2>
           <pre>
 {`afk-time: 300
 kick-enabled: true`}
           </pre>
         </section>
 
-      </div>
+        {/* PLACEHOLDERS */}
+        <section id="placeholders">
+          <h2>Placeholders</h2>
+          <ul>
+            <li>%antiafk_status%</li>
+            <li>%antiafk_time%</li>
+          </ul>
+        </section>
+      </main>
     </Layout>
   );
 }

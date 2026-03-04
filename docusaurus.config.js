@@ -46,7 +46,6 @@ const config = {
     navbar: {
       title: 'Home',
       items: [
-        {to: '/', label: 'Home', position: 'left'},
         {to: '/plugins', label: 'Plugins', position: 'left'},
       ],
     },

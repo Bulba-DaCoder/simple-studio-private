@@ -1,32 +1,73 @@
 .page {
   min-height: 100vh;
   padding: 3rem;
-  background: radial-gradient(circle at top,#12001f,#050008);
+  padding-right: 140px; /* space for right teleporter */
+  background: radial-gradient(circle at top, #12001f, #050008);
   color: white;
 }
 
-.index {
+/* TELEPORTER CONTAINER */
+.teleporter {
   position: fixed;
-  left: 0;
-  top: 20%;
+  right: 0;
+  top: 30%;
   width: 60px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 0 20px 20px 0;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 20px 0 0 20px;
+  padding: 0.5rem;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
 
+/* EXPANDED STATE */
+.open {
+  width: 220px;
+}
+
+/* TOGGLE BUTTON */
+.toggle {
+  background: linear-gradient(90deg, #ff77ff, #7f5cff);
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* LINK LIST */
+.index {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* LINKS */
 .index a {
-  color: #ff77ff;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
+.index a:hover {
+  color: #7f00ff;
+}
+
+/* CONTENT SECTIONS */
 section {
-  margin-left: 100px;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
+  scroll-margin-top: 100px;
+}
+
+section h1,
+section h2 {
+  background: linear-gradient(90deg, #ffd700, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import SidebarMenu from '../components/SidebarMenu';
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       title="Simple Studio"
       description="Documentation for Simple Studio Minecraft plugins"
     >
+      <SidebarMenu />
+
       <main className={styles.hero}>
         <h1 className={styles.title}>Simple Studio</h1>
         <p className={styles.subtitle}>
@@ -20,9 +23,6 @@ export default function Home() {
             Welcome to the official documentation for Simple Studio Minecraft plugins.<br/>
             Here you will find installation guides, commands, permissions, and examples.
           </p>
-          <a className={styles.cardButton} href="/docs/intro">
-            Read More
-          </a>
         </div>
 
         <div className={styles.buttons}>
