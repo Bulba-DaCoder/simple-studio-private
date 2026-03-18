@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './pluginPage.module.css';
 import SidebarMenu from '../../components/SidebarMenu';
 
 export default function AntiAfk() {
-  const [open, setOpen] = useState(false);
-
   return (
     <Layout title="AntiAFK">
       <SidebarMenu />
 
-      {/* TELEPORTER (RIGHT SIDE) */}
-      <div className={`${styles.teleporter} ${open ? styles.open : ''}`}>
-        <button
-          className={styles.toggle}
-          onClick={() => setOpen(!open)}
-        >
-          ☰
-        </button>
-
+      {/* TELEPORTER (ALWAYS OPEN, RIGHT SIDE) */}
+      <div className={styles.teleporter}>
         <nav className={styles.index}>
           <a href="#introduction">Introduction</a>
           <a href="#permissions">Permissions</a>

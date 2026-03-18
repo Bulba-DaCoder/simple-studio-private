@@ -1,43 +1,33 @@
 .page {
   min-height: 100vh;
   padding: 3rem;
-  padding-right: 140px; /* space for right teleporter */
+  padding-right: 220px; /* space for teleporter */
   background: radial-gradient(circle at top, #12001f, #050008);
   color: white;
 }
 
-/* TELEPORTER CONTAINER */
+/* TELEPORTER (ALWAYS VISIBLE) */
 .teleporter {
   position: fixed;
-  right: 0;
-  top: 30%;
-  width: 60px;
+  right: 30px;
+  top: 120px;
+
+  width: 200px;
+
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
-  border-radius: 20px 0 0 20px;
-  padding: 0.5rem;
-  transition: width 0.3s ease;
+
+  border-radius: 12px;
+  padding: 1rem;
+
   z-index: 1000;
-  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
-/* EXPANDED STATE */
-.open {
-  width: 220px;
-}
-
-/* TOGGLE BUTTON */
-.toggle {
-  background: linear-gradient(90deg, #ff77ff, #7f5cff);
-  border: none;
-  color: black;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 6px 10px;
-  margin-bottom: 1rem;
-  width: 100%;
-}
+/* REMOVE THESE IF PRESENT (not needed anymore)
+.open {}
+.toggle {}
+*/
 
 /* LINK LIST */
 .index {
@@ -46,20 +36,18 @@
   gap: 1rem;
 }
 
-/* LINKS */
 .index a {
   color: #000;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
 }
 
 .index a:hover {
   color: #7f00ff;
 }
 
-/* CONTENT SECTIONS */
+/* CONTENT */
 section {
   margin-bottom: 5rem;
   scroll-margin-top: 100px;
